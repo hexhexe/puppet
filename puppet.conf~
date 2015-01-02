@@ -1,0 +1,18 @@
+[main]
+  vardir = /var/lib/puppet
+  logdir = /var/log/puppet
+  rundir = /var/run/puppet
+  ssldir = $vardir/ssl
+  puppetsync = true
+
+[agent]
+  classfile = $vardir/classes.txt
+  localconfig = $vardir/localconfig
+  runinterval = 900
+  server = digger
+  report = false
+
+[master]
+  autoflush = true
+  autosign = true
+  certname = puppet

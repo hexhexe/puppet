@@ -1,0 +1,41 @@
+class openbox {
+  package {
+   'openbox': 		ensure => present;
+   'openbox-themes': 	ensure => present;
+   'obconf': 		ensure => present;
+   'hsetroot': 		ensure => present;
+  }
+
+  file { "$home/.config/":
+    ensure => 'directory',
+    owner   => $user,
+    group   => $group,
+    mode    => 0550,
+    requiry => Package [ "openbox" ];
+  }
+
+  file { "$home/.config/openbox":
+    ensure => 'directory',
+    owner   => $user,
+    group   => $group,
+    mode    => 0550,
+    require => Directory["/home/$user/.config/"],
+  }
+
+#  file { "$home/.config/openbox/autostart.sh":
+#    owner   => $user,
+#    group   => $group,
+#    mode    => 0755,
+#    source  => "puppet://$puppetserver/modules/desktop/ob-autostart.sh",
+#    require => Directory["/home/$user/.config/openbox"],
+#  }
+
+#  file { "$home/.config/openbox/rc.xml":
+#    owner   => $user,
+#    group   => $group,
+#    mode    => 0755,
+#    source  => "puppet://$puppetserver/modules/desktop/ob-rc.xml",
+#    require => Directory["/home/$user/.config/openbox"],
+#  }
+
+}

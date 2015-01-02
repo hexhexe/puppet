@@ -1,0 +1,63 @@
+[$Version]
+update_info=yakuake.upd:2.9.9-startupnotification
+
+[Animation]
+Frames=2
+
+[Appearance]
+BackgroundColorOpacity=40
+Skin=modified_green_on_black
+Translucency=true
+
+[Behavior]
+OpenAfterStart=true
+
+[Colors]
+CurrentPalette=Forty Colors
+
+[Desktop Entry]
+DefaultProfile=Shell.profile
+
+[Dialogs]
+ConfirmQuit=false
+FirstRun=false
+
+[Favorite Profiles]
+Favorites=
+
+[KFileDialog Settings]
+Height 600=450
+Recent Files[$e]=125351-modified_green_on_black.tar.bz2,$HOME/Downloads/125351-modified_green_on_black.tar.bz2
+Width 1024=720
+
+[Shortcuts]
+close-active-terminal=none
+close-session=none
+decrease-window-height=none
+decrease-window-width=none
+file_quit=none
+grow-terminal-bottom=none
+grow-terminal-left=none
+grow-terminal-right=none
+grow-terminal-top=none
+increase-window-height=none
+increase-window-width=none
+move-session-left=none
+move-session-right=none
+new-session=Meta+N
+next-session=Meta+Right
+next-terminal=none
+previous-session=Meta+Left
+previous-terminal=none
+rename-session=none
+split-left-right=none
+split-top-bottom=none
+view-full-screen=none
+
+[Window]
+Height=90
+KeepAbove=false
+KeepOpen=false
+Position=100
+ShowTabBar=false
+Width=100

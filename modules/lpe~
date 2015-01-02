@@ -1,0 +1,91 @@
+ac                     12627  0 
+acpi_cpufreq           17050  1 
+af_alg                 12844  1 algif_skcipher
+agpgart                31256  3 drm,intel_agp,intel_gtt
+algif_skcipher         12827  0 
+arc4                   12480  2 
+ata_generic            12450  0 
+ata_piix               29371  4 
+ath                    21707  1 ath5k
+ath5k                 139638  0 
+atkbd                  21926  0 
+battery                13164  0 
+button                 12833  1 i915
+cdc_acm                25930  0 
+cfg80211              381789  3 ath,ath5k,mac80211
+coretemp               12708  0 
+crc_t10dif             12399  1 sd_mod
+crct10dif_common       12340  2 crct10dif_generic,crc_t10dif
+crct10dif_generic      12517  1 
+dm_crypt               22135  3 
+dm_mod                 78954  6 dm_crypt
+drm                   212597  5 i915,drm_kms_helper
+drm_kms_helper         71440  1 i915
+ehci_hcd               65019  1 ehci_pci
+ehci_pci               12464  0 
+evdev                  17136  13 
+fan                    12601  0 
+gf128mul               12834  1 xts
+hwmon                  12818  1 coretemp
+i2c_algo_bit           12640  1 i915
+i2c_core               41134  7 drm,i915,i2c_i801,drm_kms_helper,i2c_algo_bit,v4l2_common,videodev
+i2c_i801               16845  0 
+i8042                  17690  1 libps2
+i915                  810084  3 
+intel_agp              17232  0 
+intel_gtt              17584  3 i915,intel_agp
+iTCO_vendor_support    12585  1 iTCO_wdt
+iTCO_wdt               12727  0 
+jfs                   171197  3 
+joydev                 16847  0 
+led_class              12747  2 ath5k,samsung_laptop
+libata                161789  3 pata_acpi,ata_generic,ata_piix
+libps2                 12643  2 atkbd,psmouse
+lpc_ich                16616  0 
+mac80211              517308  1 ath5k
+mac_hid                12569  0 
+media                  17894  2 uvcvideo,videodev
+Module                  Size  Used by
+mousedev               17096  0 
+pata_acpi              12675  0 
+pcspkr                 12531  0 
+processor              27273  1 acpi_cpufreq
+psmouse               106236  0 
+rfkill                 18387  2 cfg80211,samsung_laptop
+rng_core               12704  0 
+samsung_laptop         13398  0 
+sch_fq_codel           17151  6 
+scsi_mod              128181  4 uas,usb_storage,libata,sd_mod
+sd_mod                 43718  6 
+serio                  17914  9 serio_raw,atkbd,i8042,psmouse
+serio_raw              12737  0 
+shpchp                 30666  0 
+sky2                   51845  0 
+snd                    55101  8 snd_hda_codec_realtek,snd_hwdep,snd_timer,snd_pcm,snd_hda_codec_generic,snd_hda_codec,snd_hda_intel,snd_mixer_oss
+snd_hda_codec          93737  4 snd_hda_codec_realtek,snd_hda_codec_generic,snd_hda_intel,snd_hda_controller
+snd_hda_codec_generic    57972  1 snd_hda_codec_realtek
+snd_hda_codec_realtek    62309  1 
+snd_hda_controller     26498  1 snd_hda_intel
+snd_hda_intel          26011  1 
+snd_hwdep              12906  1 snd_hda_codec
+snd_mixer_oss          21758  1 
+snd_pcm                73796  3 snd_hda_codec,snd_hda_intel,snd_hda_controller
+snd_timer              26106  1 snd_pcm
+soundcore              12895  3 snd,snd_hda_codec
+thermal                17343  0 
+tpm                    30939  2 tpm_tis,tpm_infineon
+tpm_infineon           16778  0 
+tpm_tis                17022  0 
+uas                    21707  0 
+uhci_hcd               38956  0 
+usb_common             12484  1 usbcore
+usbcore               170981  7 uas,uhci_hcd,uvcvideo,usb_storage,ehci_hcd,ehci_pci,cdc_acm
+usb_storage            47487  2 uas
+uvcvideo               69760  0 
+v4l2_common            12867  1 videobuf2_core
+video                  17718  2 i915,samsung_laptop
+videobuf2_core         43187  1 uvcvideo
+videobuf2_memops       12471  1 videobuf2_vmalloc
+videobuf2_vmalloc      12720  1 uvcvideo
+videodev              120318  3 uvcvideo,v4l2_common,videobuf2_core
+xts                    12583  3 

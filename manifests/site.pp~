@@ -1,0 +1,6 @@
+import 'nodes.pp'
+
+$puppetserver = 'puppet'
+#$user = 'basti'
+#$group = 'basti'
+

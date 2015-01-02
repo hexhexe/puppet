@@ -1,0 +1,41 @@
+class xorg {
+  package { 
+    'xorg-server': 		ensure => present;
+    'xorg-xinit':  		ensure => present;
+    'xorg-utils':		ensure => present;
+    'xorg-server-utils':	ensure => present;
+    'xf86-input-evdev': 	ensure => present;
+    'xf86-input-keyboard': 	ensure => present;
+    'xf86-input-mouse':	 	ensure => present;
+    'xf86-input-synaptics': 	ensure => present;
+    'xf86-video-intel': 	ensure => present;
+    'xf86-video-nouveau':  	ensure => present;
+    'nouveau-dri':		ensure => present;
+    'xorg-xbacklight': 		ensure => present;
+    'xbindkeys': 		ensure => present;
+    'xcompmgr': 		ensure => present;
+    'xscreensaver': 		ensure => present;
+  }
+
+  file { 
+    "$home/.xinitrc":
+      owner   => $user,
+      group   => $group,
+      mode    => 0700,
+      source  => "puppet:///modules/desktop/xinitrc",
+      notify => Exec ["set-keyboard-to-de"];
+    "$home/.xbindkeysrc":
+      owner   => $user,
+      group   => $group,
+      mode    => 0440,
+      source  => "puppet:///modules/desktop/xbindkeysrc";
+  }
+
+  exec {
+    "set-keyboard-to-de":
+      command => "/usr/bin/localectl set-x11-keymap de 105",
+      refreshonly => true,
+      notify => Service [ "slim" ];
+  }
+
+}

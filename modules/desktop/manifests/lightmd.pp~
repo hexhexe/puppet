@@ -1,0 +1,6 @@
+class lightmd {
+
+  package {
+    'lightmd':	ensure => present;
+  }
+}

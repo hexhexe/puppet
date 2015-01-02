@@ -1,0 +1,135 @@
+6lowpan_iphc           16548  1 bluetooth
+ac                     12588  0 
+acpi_cpufreq           17050  1 
+af_alg                 12844  1 algif_skcipher
+algif_skcipher         12872  0 
+arc4                   12480  2 
+ata_generic            12450  0 
+ata_piix               29371  2 
+ath                    21707  1 ath5k
+ath5k                 131413  0 
+auth_rpcgss            45794  1 nfsd
+autofs4                30807  2 
+battery                12949  0 
+binfmt_misc            12733  1 
+bluetooth             300695  0 
+bsd_comp               12722  0 
+btrfs                 839492  0 
+button                 12824  1 i915
+ccm                    17361  1 
+cdc_acm                25897  0 
+cdrom                  34540  1 sr_mod
+cfg80211              356930  3 ath,ath5k,mac80211
+coretemp               12734  0 
+crc16                  12327  2 ext4,bluetooth
+crc32c                 12576  2 
+crc_ccitt              12331  1 ppp_async
+crc_t10dif             12399  1 sd_mod
+crct10dif_common       12340  2 crct10dif_generic,crc_t10dif
+crct10dif_generic      12517  1 
+ctr                    12807  1 
+dm_crypt               22171  1 
+dm_mod                 74719  14 dm_crypt
+drm                   194448  4 i915,drm_kms_helper
+drm_kms_helper         39412  1 i915
+ehci_hcd               60837  1 ehci_pci
+ehci_pci               12464  0 
+enclosure              13119  1 ses
+evdev                  17136  21 
+ext4                  442327  1 
+fan                    12601  0 
+fat                    52646  2 vfat,msdos
+fscache                40686  1 nfs
+fuse                   73097  3 
+gf128mul               12834  1 xts
+hfs                    48797  0 
+hfsplus                87865  0 
+i2c_algo_bit           12647  1 i915
+i2c_core               23454  6 drm,i915,i2c_i801,drm_kms_helper,i2c_algo_bit,videodev
+i2c_i801               16844  0 
+i915                  661323  3 
+iptable_filter         12488  0 
+ip_tables              16974  1 iptable_filter
+iTCO_vendor_support    12585  1 iTCO_wdt
+iTCO_wdt               12727  0 
+jbd2                   73002  1 ext4
+jfs                   162644  3 
+joydev                 16847  0 
+libata                149321  2 ata_generic,ata_piix
+libcrc32c              12394  1 xfs
+lockd                  69375  2 nfs,nfsd
+lp                     12766  0 
+lpc_ich                16616  0 
+mac80211              415761  1 ath5k
+mbcache                12938  1 ext4
+media                  17840  2 uvcvideo,videodev
+mfd_core               12537  1 lpc_ich
+minix                  30809  0 
+Module                  Size  Used by
+msdos                  16863  0 
+nfnetlink              12853  2 nfnetlink_log,nfnetlink_queue
+nfnetlink_log          17033  0 
+nfnetlink_queue        17364  0 
+nfs                   167687  0 
+nfs_acl                12463  1 nfsd
+nfsd                  224540  2 
+nls_cp437              12417  0 
+nls_utf8               12416  0 
+ntfs                  201756  0 
+oid_registry           12387  1 auth_rpcgss
+parport                35213  3 lp,ppdev,parport_pc
+parport_pc             26004  0 
+pcspkr                 12531  0 
+ppdev                  16686  0 
+ppp_async              16994  0 
+ppp_deflate            12714  0 
+ppp_generic            25922  3 bsd_comp,ppp_async,ppp_deflate
+processor              27590  1 acpi_cpufreq
+psmouse                84790  0 
+qnx4                   12876  0 
+raid6_pq               95207  1 btrfs
+rfkill                 18387  4 cfg80211,samsung_laptop,bluetooth
+rng_core               12608  0 
+samsung_laptop         13321  0 
+scsi_mod              155792  6 sg,ses,usb_storage,libata,sd_mod,sr_mod
+sd_mod                 43674  4 
+serio_raw              12737  0 
+ses                    12946  0 
+sg                     25573  0 
+shpchp                 30673  0 
+sky2                   51884  0 
+slhc                   12475  1 ppp_generic
+snd                    46863  8 snd_hda_codec_realtek,snd_hwdep,snd_timer,snd_pcm,snd_hda_codec_generic,snd_hda_codec,snd_hda_intel,snd_mixer_oss
+snd_hda_codec          89496  3 snd_hda_codec_realtek,snd_hda_codec_generic,snd_hda_intel
+snd_hda_codec_generic    49817  1 snd_hda_codec_realtek
+snd_hda_codec_realtek    49365  1 
+snd_hda_intel          34991  1 
+snd_hwdep              12906  1 snd_hda_codec
+snd_mixer_oss          21822  1 
+snd_pcm                69936  2 snd_hda_codec,snd_hda_intel
+snd_timer              22010  1 snd_pcm
+soundcore              12890  2 snd
+sr_mod                 21563  0 
+sunrpc                198822  6 nfs,nfsd,auth_rpcgss,lockd,nfs_acl
+thermal                17268  0 
+thermal_sys            27122  4 fan,video,thermal,processor
+tpm                    26879  2 tpm_tis,tpm_infineon
+tpm_infineon           16748  0 
+tpm_tis                16982  0 
+ufs                    76764  0 
+uhci_hcd               38948  0 
+usb_common             12408  1 usbcore
+usbcore               158695  7 usblp,uhci_hcd,uvcvideo,usb_storage,ehci_hcd,ehci_pci,cdc_acm
+usblp                  17090  0 
+usb_storage            43351  1 
+uvcvideo               69768  0 
+vfat                   16967  0 
+video                  17511  2 i915,samsung_laptop
+videobuf2_core         34807  1 uvcvideo
+videobuf2_memops       12471  1 videobuf2_vmalloc
+videobuf2_vmalloc      12720  1 uvcvideo
+videodev               99299  2 uvcvideo,videobuf2_core
+xfs                   707250  0 
+xor                    25716  1 btrfs
+x_tables               17978  2 ip_tables,iptable_filter
+xts                    12583  1 

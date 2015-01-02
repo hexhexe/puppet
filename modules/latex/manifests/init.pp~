@@ -1,0 +1,9 @@
+class latex {
+
+  package {
+    texlive-base: 	ensure => present;
+    texlive-core:	ensure => present;
+    texlive-latexextra: ensure => present;
+  }
+
+}

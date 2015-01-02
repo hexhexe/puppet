@@ -1,0 +1,8 @@
+class openrc {
+  package {
+    openrc:			ensure => present;
+    openrc-services-git:	ensure => present;
+    net-tools:			ensure => present;
+    syslog-ng:			ensure => present;
+  }
+}

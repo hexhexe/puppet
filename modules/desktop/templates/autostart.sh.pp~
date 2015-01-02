@@ -1,0 +1,32 @@
+xcompmgr -c -t-5 -l-5 -r4.3 -o.70 &
+hsetroot -fill  /data/Bilder/Hintergrund/Butterfly_in_Matrix.jpg
+
+yakuake &
+sleep 30
+#firefox &
+qupzilla &
+xscreensaver &
+xbindkeys &
+
+
+pidgin &
+
+sleep 60
+
+#claws-mail &
+thunderbird &
+
+skype &
+
+DELAY=.75
+APPS='  /home/.dockapp/wmBinClock \
+        /home/.dockapp/wmdocker \
+        wmappl \
+         wmix \
+       /home/.dockapp/wmab \
+        wmbiff \
+      /home/.dockapp/wmtop \
+      /home/.dockapp/wmsm \
+      wmnd '
+(for X in $APPS ; do ($X &) ; sleep $DELAY ; done) &
+

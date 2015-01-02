@@ -1,0 +1,32 @@
+xcompmgr -c -t-5 -l-5 -r4.3 -o.70 &
+hsetroot -fill  <%= @background_pic %>
+
+yakuake &
+#tilda &
+
+eval "$(pgp-agent --daemon)"
+
+DELAY=.75
+APPS='  <%= home %>/.dockapps/wmBinClock \
+        <%= home %>/.dockapps/wmdocker \
+        wmappl \
+        wmix \
+        <%= home %>/.dockapps/wmacpi \
+#        wmbiff \
+        wmtop \
+        wmsm \
+        wmnd \
+#	wmwifi'
+(for X in $APPS ; do ($X &) ; sleep $DELAY ; done) &
+
+sleep 30
+
+claws-mail &
+#thunderbird &
+
+sleep 30
+
+qupzilla &
+xscreensaver &
+xbindkeys &
+pidgin &

@@ -1,0 +1,207 @@
+# Wie lang braucht ein Prozess und was frist er an resoursen (standardmsig ausgescahltet
+ export TIMEFORAMT="real: %31R; user %31U; system %31S"
+
+# remember history
+HISTSIZE=10000
+HISTFILE=~/.zsh_history
+SAVEHIST=10000
+
+#History Append
+setopt append_history
+
+# History Modifikation verify
+setopt histverify
+
+# report all login / logouts
+# check them every 10 seconds
+export WATCH=all
+export LOGCHECK=10
+
+# EMACS Pathon
+export PYMACS_PYTHON=python2
+
+# check local mails every minute
+export MAILCHECK=60
+
+# default editor / browser settings
+export SVN_EDITOR="/usr/bin/zile"
+export EDITOR="/usr/bin/zile"
+export BROWSER="/usr/bin/firefox"
+
+# Symbolische Links folgen
+set -P
+
+# terminal blinken und piepen ausstellen
+setopt nobeep
+
+# Emacs editing mode
+bindkey -e
+
+# change dir without cd
+setopt autocd
+
+# more powerful pattern matching features
+setopt extended_glob
+
+# use autocorrection of commands
+setopt correct
+
+# use autocorrection of parameter
+setopt correct_all
+
+# cache command locations
+setopt hash_cmds
+
+#numerische Sortierung
+setopt numeric_glob_sort
+
+#enable xtrace
+#setopt xtrace
+
+# cache dirs
+setopt hash_dirs
+
+# automatically add dirs to directory stack in reverse order
+setopt autopushd pushd_minus
+
+# The following lines were added by compinstall
+zstyle ':completion:*' completer _expand _complete _correct _approximate
+zstyle ':completion:*' completions 1
+zstyle ':completion:*' glob 1
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+zstyle ':completion:*' matcher-list '' ''
+zstyle ':completion:*' max-errors 1 not-numeric
+zstyle ':completion:*' menu select=1
+zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
+zstyle ':completion:*' squeeze-slashes true
+zstyle ':completion:*' substitute 1
+
+# Prompts
+autoload -U compinit
+compinit
+autoload colors; colors
+
+# old shellname
+#export PS1="
+#Term: %y | Line: %! | Date: %D{%d.%m.%Y} | Jobs: %j 
+#[%T] %{$fg[blue]%}%n@%m%{$reset_color%}:%.$ "
+
+export PS1="
+[%!] %{$fg[blue]%}%n@%m%{$reset_color%}:%.$ "
+
+#export PS1=" 
+#[%!] %{$fg[blue]%}%n@%m%{$reset_color%}:%.$ "
+
+
+#export PS4='+%N:%i:%_>'
+
+
+
+#Keybindings
+
+KEYTIMEOUT=30
+
+bindkey '\C-k' kill-region
+bindkey '\C-d' kill-line
+#bindkey '\C-x' kill-xclip
+#bindkey '\C-v' yank-xclip
+bindkey "\e[3~" delete-char
+
+
+
+#TMUX
+
+#tmux @ startup
+[[ $TERM != "screen" ]] && /home/.tmux.d/startup.sh 
+
+# for tmux: export 256color
+[  -n "$TMUX" ] && export TERM=screen-256color
+
+
+
+#Aliases
+
+# rm cp mv Stuff
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+# Tripwire Stuff
+alias tripwire='LC_ALL=C /usr/sbin/tripwire'
+alias twadmincfg='sudo twadmin --create-polfile --cfgfile /etc/tripwire/tw.cfg  --polfile /etc/tripwire/tw.pol --site-keyfile /etc/tripwire/site.key /etc/tripwire/twpol.txt'
+alias twadminpol='sudo twadmin --create-polfile --cfgfile /etc/tripwire/tw.cfg  --polfile /etc/tripwire/tw.pol --site-keyfile /etc/tripwire/site.key /etc/tripwire/twpol.txt'
+alias twinitdb='sudo tripwire --init --cfgfile /etc/tripwire/tw.cfg --polfile /etc/tripwire/tw.pol --site-keyfile /etc/tripwire/site.key --local-keyfile /etc/tripwire/crazy-local.key'
+alias twupdatedb='sudo tripwire --update'
+alias twcheck='sudo /etc/tripwire/check.sh &'
+
+# Mail Stuff
+alias mail='mail; touch /var/mail/lilu;'
+
+# System Stuff
+alias g="xscreensaver-command -lock &"
+alias l='ls -aluih'
+alias m='tail -f /var/log/messages.log'
+alias n='netstat -anp | grep LISTEN'
+alias p='ps -e -o ppid,pid,%cpu,%mem,stackp,tty,user,state,cmd'
+alias copy='tmux show-buffer | xclip -i -selection clipboard'
+
+# Emacs  
+alias emacs='emacs -nw'
+alias sumacs='sudo emacs -nw'
+
+# Git Stuff
+alias gittexpull='git pull origin master'
+alias gittexpush='git push origin master'
+
+# PDF Stuff
+alias pdf='acroread'
+
+# Network Stuff
+alias s='sudo /etc/umts/setpin'
+alias u='sudo netcfg umts'
+alias e='sudo netcfg ethernet'
+alias w='sudo netcfg wlan'
+alias a='sudo netcfg abyt'
+alias x='sudo netcfg -a'
+
+alias abyt='ssh lpelzer@gw.netcetera.com'
+
+# WLAN Stuff
+alias wlan='sudo netcfg wlan'
+alias aire='aireplay start wlan0'
+
+# Root Stuff
+alias su='su -'
+
+# Firefox Stuff
+# alias firefox='firefox3'
+
+# Webcam Stuff
+alias webcam='sudo modeprobe uvcvideo'
+alias webcamoff='sudo rmmod uvcvideo'
+
+# Virtualbox Stuff
+alias vbox='sudo modprobe vboxdrv && virtualbox &'
+
+# Schedul Stuff
+#sched 17:35 echo Time to go\! Bye Byo :\)
+
+# Logout after 5 min unused
+#TMOUT=300
+export PERL_LOCAL_LIB_ROOT="/home/perl5";
+export PERL_MB_OPT="--install_base /home/perl5";
+export PERL_MM_OPT="INSTALL_BASE=/home/perl5";
+export PERL5LIB="/home/perl5/lib/perl5/i686-linux-thread-multi:/home/perl5/lib/perl5";
+export PATH="/home/perl5/bin:$PATH";
+
+# File Manger
+alias filemanager='krusader'
+
+# Drovak
+alias okm="setxkbmap de"
+alias nkm="setxkbmap de -variant dvorak"
+
+#Prasi
+alias prasion="sudo xrandr --output LVDS1 --mode 800x600 --output VGA1 --mode 800x600 --same-as LVDS1"
+alias prasioff="sudo xrandr --output VGA1 off; sudo xrandr --output LVDS1 --mode 1024x600"

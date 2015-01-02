@@ -1,0 +1,20 @@
+1.) install pacman
+   pacman -Sy puppet 
+2.) set the hostname
+   echo "192.168.0.13 <your_hostname>" >> /etc/hosts
+3.) clean /etc/puppet directory
+   rm -rf /etc/puppet; mkdir /etc/puppet; cd /etc/puppet
+4.) get the puppet configuration and put it into /etc/puppet
+   git clone github.com/path_to_your_puppet_stuff
+5.) if you have a new hostname add it to
+   /etc/puppet/manifests/nodes.pp
+6.) start the puppet master
+   puppet master --verbose oder puppet master --verbose --no-deamonize
+  or
+   puppet agent --test
+7.) if the run finsished successful don`t forget to change your user pw
+   passwd $username 
+
+NOTE:
+if a stranke error with package installation happans, open a new shell and restart the puppet agent
+-> this error ocurs because yaourt is installed and used by puppet afterwards

@@ -1,0 +1,13 @@
+class develop {
+  package {
+    'gcc': ensure => present;
+    'make': ensure => present;
+    'automake': ensure => present;
+    'autoconf': ensure => present;
+    'subversion': ensure => present;
+    'git': ensure => present;
+    'patch': ensure => present;
+    'binutils': ensure => present;
+    'bc': ensure => present;
+  }
+}
